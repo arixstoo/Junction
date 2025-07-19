@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 214 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 214 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* OCEA Brand Colors */
+.ocea-primary {
+  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+}
+
+.ocea-secondary {
+  background: linear-gradient(135deg, #00aaff 0%, #0088cc 100%);
+}
+
+.ocea-accent {
+  background: linear-gradient(135deg, #66ccff 0%, #3399ff 100%);
+}
+
+/* Custom animations for alerts */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .mobile-friendly {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
