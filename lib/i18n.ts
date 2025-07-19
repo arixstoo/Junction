@@ -191,6 +191,62 @@ export const translations = {
     temperatureTrends: "Temperature Trends",
     waterQualityTrends: "Water Quality Trends",
     chemicalLevels: "Chemical Levels",
+    
+    // Additional Settings translations
+    editProfile: "Edit Profile",
+    configureSystemPreferences: "Configure your system preferences and settings",
+    whatsappNotifications: "WhatsApp Notifications",
+    setAlertThresholds: "Set alert thresholds for pond parameters",
+    temperatureThreshold: "Temperature Threshold",
+    phThreshold: "pH Threshold",
+    oxygenThreshold: "Oxygen Threshold",
+    turbidityThreshold: "Turbidity Threshold",
+    systemSettings: "System Settings",
+    configureSystemBehavior: "Configure system behavior and data management",
+    dataRefreshInterval: "Data Refresh Interval",
+    seconds: "seconds",
+    minute: "minute",
+    minutes: "minutes",
+    days: "days",
+    dataRetention: "Data Retention",
+    userPreferences: "User Preferences",
+    personalizeExperience: "Personalize your application experience",
+    theme: "Theme",
+    lightTheme: "Light Theme",
+    darkTheme: "Dark Theme",
+    autoTheme: "Auto Theme",
+    defaultView: "Default View",
+    
+    // Profile page additional translations
+    address: "Address",
+    activityPerformanceMetrics: "Your activity and performance metrics",
+    activeAccount: "Active Account",
+    
+    // Settings page with Algerian data (English transliteration)
+    userFullName: "Makhlouf Kamel Benali",
+    userEmail: "makhlouf.kamel@ocea-dz.com",
+    userPhone: "+213 550 123 456",
+    userJobTitle: "Aquaculture Farms Manager",
+    userCompany: "OCEA Algeria - Aquaculture Technology",
+    userAddress: "25 Independence Street, Algiers, Algeria 16000",
+    
+    // Algerian farm locations (English transliteration)
+    location1: "Oran Fish Farm",
+    location2: "Annaba Fish Farm", 
+    location3: "Bejaia Fish Farm",
+    location4: "Skikda Fish Farm",
+    
+    // Algerian names for managers (English transliteration)
+    manager1: "Ahmed Ben Mohamed Tlemcani",
+    manager2: "Fatima Zahra Boualam",
+    manager3: "Youssef Ben Abdullah Constantini",
+    manager4: "Khadija Bint Hassan Wahrani",
+    
+    // Additional alert translations
+    noAlertsTriggeredRecently: "No alerts have been triggered recently",
+    
+    // Dashboard translations
+    enhancedAnalytics: "Enhanced Analytics",
   },
   fr: {
     // Navigation
@@ -384,6 +440,62 @@ export const translations = {
     temperatureTrends: "Tendances de température",
     waterQualityTrends: "Tendances de qualité de l'eau",
     chemicalLevels: "Niveaux chimiques",
+    
+    // Additional Settings translations
+    editProfile: "Modifier le profil",
+    configureSystemPreferences: "Configurez vos préférences système et paramètres",
+    whatsappNotifications: "Notifications WhatsApp",
+    setAlertThresholds: "Définir les seuils d'alerte pour les paramètres du bassin",
+    temperatureThreshold: "Seuil de température",
+    phThreshold: "Seuil de pH",
+    oxygenThreshold: "Seuil d'oxygène",
+    turbidityThreshold: "Seuil de turbidité",
+    systemSettings: "Paramètres système",
+    configureSystemBehavior: "Configurer le comportement du système et la gestion des données",
+    dataRefreshInterval: "Intervalle de rafraîchissement des données",
+    seconds: "secondes",
+    minute: "minute",
+    minutes: "minutes",
+    days: "jours",
+    dataRetention: "Rétention des données",
+    userPreferences: "Préférences utilisateur",
+    personalizeExperience: "Personnalisez votre expérience d'application",
+    theme: "Thème",
+    lightTheme: "Thème clair",
+    darkTheme: "Thème sombre",
+    autoTheme: "Thème automatique",
+    defaultView: "Vue par défaut",
+    
+    // Profile page additional translations
+    address: "Adresse",
+    activityPerformanceMetrics: "Vos métriques d'activité et de performance",
+    activeAccount: "Compte actif",
+    
+    // Settings page with Algerian data (English transliteration)
+    userFullName: "Makhlouf Kamel Benali",
+    userEmail: "makhlouf.kamel@ocea-dz.com",
+    userPhone: "+213 550 123 456",
+    userJobTitle: "Gestionnaire de fermes aquacoles",
+    userCompany: "OCEA Algérie - Technologie Aquacole",
+    userAddress: "25 Rue de l'Indépendance, Alger, Algérie 16000",
+    
+    // Algerian farm locations (English transliteration)
+    location1: "Ferme piscicole d'Oran",
+    location2: "Ferme piscicole d'Annaba", 
+    location3: "Ferme piscicole de Béjaïa",
+    location4: "Ferme piscicole de Skikda",
+    
+    // Algerian names for managers (English transliteration)
+    manager1: "Ahmed Ben Mohamed Tlemcani",
+    manager2: "Fatima Zahra Boualam",
+    manager3: "Youssef Ben Abdullah Constantini",
+    manager4: "Khadija Bint Hassan Wahrani",
+    
+    // Additional alert translations
+    noAlertsTriggeredRecently: "Aucune alerte n'a été déclenchée récemment",
+    
+    // Dashboard translations
+    enhancedAnalytics: "Analyses avancées",
   },
 }
 

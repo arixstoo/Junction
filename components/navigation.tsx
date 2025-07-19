@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Bell, Home, Settings, User, Waves, LogOut, Globe, Menu } from "lucide-react"
 import { useTranslation, type Language } from "@/lib/i18n"
+import { useAuth } from "@/hooks/use-auth"
 import { useState, useEffect } from "react"
 import { dataService } from "@/lib/mongodb"
 
@@ -19,6 +20,7 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onPageChange, language, onLanguageChange }: NavigationProps) {
   const { t } = useTranslation(language)
+  const { logout } = useAuth()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [alertCount, setAlertCount] = useState(0)
 
@@ -44,9 +46,8 @@ export function Navigation({ currentPage, onPageChange, language, onLanguageChan
 
   const NavigationContent = () => (
     <div className="flex flex-col h-full">
-      <div className="flex h-16 items-center gap-3 border-b px-4 lg:px-6">
-        <img src="/logo.svg" alt="OCEA" className="h-8 w-8" />
-        <span className="font-bold text-gray-900">OCEA</span>
+      <div className="flex h-16 items-center  gap-3 border-b px-4 lg:px-6">
+        <img src="/logo.svg" alt="OCEA" className="h-32 w-40" />
       </div>
 
       <div className="px-4 lg:px-4 py-4 space-y-3">
@@ -155,7 +156,7 @@ export function Navigation({ currentPage, onPageChange, language, onLanguageChan
           variant="ghost"
           className="w-full justify-start gap-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 text-sm"
           onClick={() => {
-            onPageChange("login")
+            logout()
             setMobileOpen(false)
           }}
         >
@@ -173,7 +174,6 @@ export function Navigation({ currentPage, onPageChange, language, onLanguageChan
         <div className="flex items-center justify-between p-4 border-b bg-white">
           <div className="flex items-center gap-3">
             <img src="/logo.svg" alt="OCEA" className="h-8 w-8" />
-            <span className="font-bold text-gray-900">OCEA</span>
           </div>
           <div className="flex items-center gap-2">
             {alertCount > 0 && (

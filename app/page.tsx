@@ -8,50 +8,71 @@ import { PondChart } from "@/components/pond-chart"
 import { PondTable } from "@/components/pond-table"
 import { AlertCard } from "@/components/alert-card"
 import { Navigation } from "@/components/navigation"
-import { PondsPage } from "@/pages/ponds-page"
-import { AlertsPage } from "@/pages/alerts-page"
-import { SettingsPage } from "@/pages/settings-page"
-import { ProfilePage } from "@/pages/profile-page"
-import { LoginPage } from "@/pages/login-page"
+import { PondsPage } from "../pages/ponds-page"
+import { AlertsPage } from "../pages/alerts-page"
+import { SettingsPage } from "../pages/settings-page"
+import { ProfilePage } from "../pages/profile-page"
+import { LoginPage } from "../pages/login-page"
+import { DashboardComponent } from "@/components/dashboard-component"
+import { AlertsPage as EnhancedAlertsPage } from "@/components/enhanced-alerts-page"
+import { PondsPage as EnhancedPondsPage } from "@/components/enhanced-ponds-page"
+import { APITestComponent } from "@/components/api-test-component"
+import { CORSTroubleshootingComponent } from "@/components/cors-troubleshooting"
 import { useTranslation, type Language } from "@/lib/i18n"
+import { useAuth } from "@/hooks/use-auth"
 import { AlertTriangle, Activity, Droplets, Thermometer, Waves, Loader2 } from "lucide-react"
 import { dataService, type AlertData, type PondData } from "@/lib/mongodb"
 import { generateHistoricalData } from "@/lib/chart-data"
 
 export default function Page() {
   const [currentPage, setCurrentPage] = useState("dashboard")
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [language, setLanguage] = useState<Language>("en")
+  const { isAuthenticated, loading } = useAuth()
   const { t } = useTranslation(language)
 
   const handleLogin = () => {
-    setIsLoggedIn(true)
     setCurrentPage("dashboard")
   }
 
   const handlePageChange = (page: string) => {
-    if (page === "login") {
-      setIsLoggedIn(false)
-    }
     setCurrentPage(page)
   }
 
-  if (!isLoggedIn) {
+  // Show loading spinner while checking authentication
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show login page if not authenticated
+  if (!isAuthenticated) {
     return <LoginPage onLogin={handleLogin} language={language} onLanguageChange={setLanguage} />
   }
 
   const renderPage = () => {
     switch (currentPage) {
+      case "dashboard":
+        return <DashboardComponent language={language} />
       case "ponds":
-        return <PondsPage language={language} />
+        return <EnhancedPondsPage language={language} />
       case "alerts":
-        return <AlertsPage language={language} />
+        return <EnhancedAlertsPage language={language} />
       case "settings":
         return <SettingsPage language={language} />
       case "profile":
         return <ProfilePage language={language} />
+      case "test":
+        return <APITestComponent />
+      case "cors":
+        return <CORSTroubleshootingComponent />
       default:
-        return <DashboardPage language={language} setCurrentPage={setCurrentPage} />
+        return <DashboardComponent language={language} />
     }
   }
 
@@ -198,6 +219,8 @@ function DashboardPage({ language, setCurrentPage }: { language: Language; setCu
       ammonia: totals.ammonia / ponds.length,
     }
   }
+
+  
 
   const averages = calculateAverages()
 

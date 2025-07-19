@@ -1,12 +1,14 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "pond-monitoring-frontend",
+  "version": "1.0.0",
   "private": true,
+  "description": "🌊 Real-time Pond Monitoring Dashboard with Backend API Integration",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "test-api": "echo 'Make sure backend is running on http://localhost:8000 with admin/secret credentials'"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
